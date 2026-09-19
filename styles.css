@@ -1,0 +1,285 @@
+:root {
+  --ink: #172d2a;
+  --muted: #6b7772;
+  --paper: #f6f4ed;
+  --line: #d7ddd4;
+  --mint: #d8e9dc;
+  --green: #285f4f;
+  --orange: #e07c4f;
+  --white: #fffef9;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: "DM Sans", sans-serif;
+}
+
+body::before {
+  position: fixed;
+  top: -170px;
+  right: -120px;
+  z-index: -1;
+  width: 450px;
+  height: 450px;
+  border-radius: 50%;
+  background: var(--mint);
+  content: "";
+  opacity: 0.7;
+}
+
+.page-shell {
+  width: min(1120px, calc(100% - 40px));
+  margin: 0 auto;
+  padding: 82px 0 52px;
+}
+
+.intro {
+  max-width: 650px;
+  margin-bottom: 54px;
+}
+
+.eyebrow,
+.plan-kicker,
+.fine-print {
+  color: var(--orange);
+  font-family: "Space Mono", monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.eyebrow {
+  margin: 0 0 18px;
+}
+
+h1,
+h2,
+p {
+  margin-top: 0;
+}
+
+h1 {
+  margin-bottom: 20px;
+  font-size: clamp(2.8rem, 6vw, 5.2rem);
+  font-weight: 600;
+  letter-spacing: -0.07em;
+  line-height: 0.95;
+}
+
+h1 em {
+  color: var(--green);
+  font-style: normal;
+}
+
+.intro-copy {
+  max-width: 500px;
+  margin-bottom: 0;
+  color: var(--muted);
+  font-size: 1.05rem;
+  line-height: 1.65;
+}
+
+.plans {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: start;
+  gap: 18px;
+}
+
+.plan-card {
+  position: relative;
+  display: flex;
+  min-height: 470px;
+  flex-direction: column;
+  padding: 34px 30px 30px;
+  border: 1px solid var(--line);
+  background: rgba(255, 254, 249, 0.74);
+}
+
+.plan-card.featured {
+  margin-top: -18px;
+  border: 1px solid var(--green);
+  background: var(--green);
+  color: var(--white);
+  box-shadow: 0 16px 35px rgba(40, 95, 79, 0.16);
+}
+
+.popular {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 9px 13px;
+  background: var(--orange);
+  color: var(--white);
+  font-family: "Space Mono", monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  transform: translateY(-1px);
+}
+
+.plan-kicker {
+  margin-bottom: 18px;
+}
+
+.featured .plan-kicker {
+  color: #b9d8c1;
+}
+
+h2 {
+  margin-bottom: 22px;
+  font-size: 2rem;
+  font-weight: 500;
+  letter-spacing: -0.05em;
+}
+
+.price {
+  margin-bottom: 17px;
+  font-size: 3rem;
+  font-weight: 600;
+  letter-spacing: -0.07em;
+  line-height: 1;
+}
+
+.price span {
+  font-size: 1.25rem;
+  vertical-align: top;
+}
+
+.price small {
+  color: var(--muted);
+  font-size: 0.75rem;
+  font-weight: 400;
+  letter-spacing: 0;
+}
+
+.featured .price small,
+.featured .plan-description {
+  color: #c7ded0;
+}
+
+.plan-description {
+  min-height: 52px;
+  margin-bottom: 30px;
+  color: var(--muted);
+  font-size: 0.92rem;
+  line-height: 1.55;
+}
+
+.plan-button {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 16px;
+  border: 1px solid var(--green);
+  color: var(--green);
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.plan-button:hover {
+  transform: translateY(-2px);
+}
+
+.plan-button.secondary:hover {
+  background: var(--green);
+  color: var(--white);
+}
+
+.plan-button.primary {
+  border-color: var(--orange);
+  background: var(--orange);
+  color: var(--white);
+}
+
+.plan-button.primary:hover {
+  background: #c9653b;
+  border-color: #c9653b;
+}
+
+.features {
+  display: grid;
+  gap: 13px;
+  margin: auto 0 0;
+  padding: 28px 0 0;
+  border-top: 1px solid var(--line);
+  list-style: none;
+}
+
+.featured .features {
+  border-color: rgba(255, 255, 255, 0.25);
+}
+
+.features li {
+  position: relative;
+  padding-left: 21px;
+  color: var(--muted);
+  font-size: 0.86rem;
+}
+
+.featured .features li {
+  color: #e4f0e6;
+}
+
+.features li::before {
+  position: absolute;
+  left: 0;
+  color: var(--orange);
+  content: "+";
+  font-weight: 700;
+}
+
+.fine-print {
+  margin: 28px 0 0;
+  color: var(--muted);
+  font-size: 0.65rem;
+  text-align: center;
+}
+
+@media (max-width: 800px) {
+  .page-shell {
+    padding-top: 56px;
+  }
+
+  .plans {
+    grid-template-columns: 1fr;
+    max-width: 520px;
+    margin: 0 auto;
+  }
+
+  .plan-card.featured {
+    order: -1;
+    margin-top: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .page-shell {
+    width: min(100% - 28px, 520px);
+    padding-top: 40px;
+  }
+
+  .intro {
+    margin-bottom: 38px;
+  }
+
+  h1 {
+    font-size: 3.15rem;
+  }
+
+  .plan-card {
+    min-height: 0;
+    padding: 28px 23px 25px;
+  }
+}
