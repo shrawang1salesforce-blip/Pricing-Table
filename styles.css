@@ -44,18 +44,12 @@ body::before {
   margin-bottom: 54px;
 }
 
-.eyebrow,
-.plan-kicker,
-.fine-print {
+.plan-kicker {
   color: var(--orange);
   font-family: "Space Mono", monospace;
   font-size: 0.72rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-}
-
-.eyebrow {
-  margin: 0 0 18px;
 }
 
 h1,
@@ -238,13 +232,6 @@ h2 {
   color: var(--orange);
   content: "+";
   font-weight: 700;
-}
-
-.fine-print {
-  margin: 28px 0 0;
-  color: var(--muted);
-  font-size: 0.65rem;
-  text-align: center;
 }
 
 @media (max-width: 800px) {
